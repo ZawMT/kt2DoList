@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/frgList">
+
+    <fragment
+        android:id="@+id/frgList"
+        android:name="corner.z.kottodo.fragments.FrgList"
+        android:label="TODO List"
+        tools:layout="@layout/fragment_frg_list" >
+        <action
+            android:id="@+id/action_frgList_to_frgAdd"
+            app:destination="@id/frgAdd" />
+    </fragment>
+    <fragment
+        android:id="@+id/frgAdd"
+        android:name="corner.z.kottodo.fragments.FrgAdd"
+        android:label="Add TODO"
+        tools:layout="@layout/fragment_frg_add" >
+        <action
+            android:id="@+id/action_frgAdd_to_frgList"
+            app:destination="@id/frgList" />
+    </fragment>
+</navigation>

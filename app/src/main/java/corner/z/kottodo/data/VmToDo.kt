@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class VmToDo(application: Application): AndroidViewModel(application) {
-    private val lstAllToDo: LiveData<List<ToDo>>
+    val lstAllToDo: LiveData<List<ToDo>>
     private val repo: RepToDo
 
     init{

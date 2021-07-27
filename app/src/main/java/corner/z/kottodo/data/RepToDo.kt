@@ -7,4 +7,8 @@ class RepToDo(private val daoToDo: DaoToDo) {
     suspend fun addToDo(toDo: ToDo){
         daoToDo.add(toDo)
     }
+
+    suspend fun updateToDo(toDo: ToDo){
+        daoToDo.update(toDo)
+    }
 }

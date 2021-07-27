@@ -7,20 +7,35 @@
 
     <fragment
         android:id="@+id/frgList"
-        android:name="corner.z.kottodo.fragments.FrgList"
+        android:name="corner.z.kottodo.fragments.list.FrgList"
         android:label="TODO List"
         tools:layout="@layout/fragment_frg_list" >
         <action
             android:id="@+id/action_frgList_to_frgAdd"
             app:destination="@id/frgAdd" />
+        <action
+            android:id="@+id/action_frgList_to_frgEdit"
+            app:destination="@id/frgEdit" />
     </fragment>
     <fragment
         android:id="@+id/frgAdd"
-        android:name="corner.z.kottodo.fragments.FrgAdd"
+        android:name="corner.z.kottodo.fragments.add.FrgAdd"
         android:label="Add TODO"
         tools:layout="@layout/fragment_frg_add" >
         <action
             android:id="@+id/action_frgAdd_to_frgList"
             app:destination="@id/frgList" />
+    </fragment>
+    <fragment
+        android:id="@+id/frgEdit"
+        android:name="corner.z.kottodo.fragments.edit.FrgEdit"
+        android:label="Edit"
+        tools:layout="@layout/fragment_frg_edit" >
+        <action
+            android:id="@+id/action_frgEdit_to_frgList"
+            app:destination="@id/frgList" />
+        <argument
+            android:name="curToDo"
+            app:argType="corner.z.kottodo.data.ToDo" />
     </fragment>
 </navigation>

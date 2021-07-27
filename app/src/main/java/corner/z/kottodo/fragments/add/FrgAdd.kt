@@ -1,4 +1,4 @@
-package corner.z.kottodo.fragments
+package corner.z.kottodo.fragments.add
 
 import android.os.Bundle
 import android.text.TextUtils

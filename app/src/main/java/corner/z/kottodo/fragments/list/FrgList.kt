@@ -1,4 +1,4 @@
-package corner.z.kottodo.fragments
+package corner.z.kottodo.fragments.list
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import corner.z.kottodo.R
-import corner.z.kottodo.adaptor.AdptrRvToDo
 import corner.z.kottodo.data.VmToDo
 import kotlinx.android.synthetic.main.fragment_frg_list.view.*
 

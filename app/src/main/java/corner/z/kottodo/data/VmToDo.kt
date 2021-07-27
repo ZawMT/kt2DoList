@@ -22,4 +22,10 @@ class VmToDo(application: Application): AndroidViewModel(application) {
             repo.addToDo(toDo)
         }
     }
+
+    fun updateToDo(toDo: ToDo) {
+        viewModelScope.launch(Dispatchers.IO){
+            repo.updateToDo(toDo)
+        }
+    }
 }

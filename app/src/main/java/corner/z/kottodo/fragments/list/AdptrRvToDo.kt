@@ -1,8 +1,9 @@
-package corner.z.kottodo.adaptor
+package corner.z.kottodo.fragments.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import corner.z.kottodo.R
 import corner.z.kottodo.data.ToDo
@@ -12,7 +13,6 @@ class AdptrRvToDo: RecyclerView.Adapter<AdptrRvToDo.VhLstToDo>() {
     private var lstToDo = emptyList<ToDo>()
 
     class VhLstToDo(itemView: View): RecyclerView.ViewHolder(itemView){
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VhLstToDo {
@@ -23,6 +23,11 @@ class AdptrRvToDo: RecyclerView.Adapter<AdptrRvToDo.VhLstToDo>() {
         val tmpCur = lstToDo[position]
         holder.itemView.tvTodo.text = tmpCur.strToDo
         holder.itemView.cbDone.isChecked = tmpCur.bDone
+
+        holder.itemView.row_todo_layout.setOnClickListener {
+            val tmpAction = FrgListDirections.actionFrgListToFrgEdit(tmpCur)
+            holder.itemView.findNavController().navigate(tmpAction)
+        }
     }
 
     override fun getItemCount(): Int {

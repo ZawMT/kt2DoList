@@ -1,10 +1,7 @@
 package corner.z.kottodo.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface DaoToDo {
@@ -14,4 +11,7 @@ interface DaoToDo {
 
     @Query("SELECT * FROM TToDo ORDER BY id")
     fun readAll(): LiveData<List<ToDo>>
+
+    @Update
+    suspend fun update(toDo: ToDo)
 }

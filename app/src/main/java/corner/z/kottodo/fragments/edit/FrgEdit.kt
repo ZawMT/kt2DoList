@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavArgs
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import corner.z.kottodo.R
-import corner.z.kottodo.data.ToDo
-import corner.z.kottodo.data.VmToDo
+import corner.z.kottodo.data.model.ToDo
+import corner.z.kottodo.data.viewmodel.VmToDo
 import kotlinx.android.synthetic.main.fragment_frg_edit.*
 import kotlinx.android.synthetic.main.fragment_frg_edit.view.*
 

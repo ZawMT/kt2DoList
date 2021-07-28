@@ -1,7 +1,8 @@
-package corner.z.kottodo.data
+package corner.z.kottodo.data.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import corner.z.kottodo.data.model.ToDo
 
 @Dao
 interface DaoToDo {

@@ -36,6 +36,6 @@
             app:destination="@id/frgList" />
         <argument
             android:name="curToDo"
-            app:argType="corner.z.kottodo.data.ToDo" />
+            app:argType="corner.z.kottodo.data.model.ToDo" />
     </fragment>
 </navigation>

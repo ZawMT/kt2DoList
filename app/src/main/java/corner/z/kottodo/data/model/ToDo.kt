@@ -1,4 +1,4 @@
-package corner.z.kottodo.data
+package corner.z.kottodo.data.model
 
 import android.os.Parcelable
 import androidx.room.Entity

@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import corner.z.kottodo.R
-import corner.z.kottodo.data.VmToDo
+import corner.z.kottodo.data.viewmodel.VmToDo
 import kotlinx.android.synthetic.main.fragment_frg_list.view.*
 
 class FrgList : Fragment() {

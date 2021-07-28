@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import corner.z.kottodo.R
-import corner.z.kottodo.data.ToDo
+import corner.z.kottodo.data.model.ToDo
 import kotlinx.android.synthetic.main.row_todo.view.*
 
 class AdptrRvToDo: RecyclerView.Adapter<AdptrRvToDo.VhLstToDo>() {

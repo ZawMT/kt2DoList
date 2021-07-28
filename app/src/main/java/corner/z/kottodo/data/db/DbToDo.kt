@@ -1,9 +1,11 @@
-package corner.z.kottodo.data
+package corner.z.kottodo.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import corner.z.kottodo.data.dao.DaoToDo
+import corner.z.kottodo.data.model.ToDo
 
 @Database(entities = [ToDo::class], version = 1, exportSchema = false)
 abstract class DbToDo: RoomDatabase() {

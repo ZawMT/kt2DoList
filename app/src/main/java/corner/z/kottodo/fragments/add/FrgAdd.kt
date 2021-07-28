@@ -10,8 +10,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import corner.z.kottodo.R
-import corner.z.kottodo.data.ToDo
-import corner.z.kottodo.data.VmToDo
+import corner.z.kottodo.data.model.ToDo
+import corner.z.kottodo.data.viewmodel.VmToDo
 import kotlinx.android.synthetic.main.fragment_frg_add.*
 import kotlinx.android.synthetic.main.fragment_frg_add.view.*
 

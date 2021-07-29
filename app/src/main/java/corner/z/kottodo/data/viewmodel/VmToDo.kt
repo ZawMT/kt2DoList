@@ -31,4 +31,10 @@ class VmToDo(application: Application): AndroidViewModel(application) {
             repo.updateToDo(toDo)
         }
     }
+
+    fun deleteToDo(toDo: ToDo){
+        viewModelScope.launch(Dispatchers.IO){
+            repo.deleteToDo(toDo)
+        }
+    }
 }

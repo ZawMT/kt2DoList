@@ -20,8 +20,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDel"
         android:paddingTop="5dp"
         app:layout_constraintStart_toEndOf="@+id/cbDone"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:background="@drawable/ic_del"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

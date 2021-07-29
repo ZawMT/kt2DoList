@@ -14,7 +14,7 @@ import corner.z.kottodo.data.viewmodel.VmToDo
 import kotlinx.android.synthetic.main.fragment_frg_list.view.*
 
 class FrgList : Fragment() {
-    private lateinit var vmToDo: VmToDo
+    lateinit var vmToDo: VmToDo
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

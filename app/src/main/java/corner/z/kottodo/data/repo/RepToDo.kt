@@ -13,4 +13,8 @@ class RepToDo(private val daoToDo: DaoToDo) {
     suspend fun updateToDo(toDo: ToDo){
         daoToDo.update(toDo)
     }
+
+    suspend fun deleteToDo(toDo: ToDo){
+        daoToDo.delete(toDo)
+    }
 }

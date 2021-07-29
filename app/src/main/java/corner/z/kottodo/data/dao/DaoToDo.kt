@@ -15,4 +15,7 @@ interface DaoToDo {
 
     @Update
     suspend fun update(toDo: ToDo)
+
+    @Delete
+    suspend fun delete(toDo: ToDo)
 }

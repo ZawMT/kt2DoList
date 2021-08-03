@@ -1,10 +1,9 @@
 package corner.z.kottodo.fragments.edit
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -31,6 +30,8 @@ class FrgEdit : Fragment() {
             updateToDo()
         }
 
+        setHasOptionsMenu(true)
+
         return view
     }
 
@@ -45,5 +46,32 @@ class FrgEdit : Fragment() {
         } else {
             Toast.makeText(requireContext(),"Update fails!", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_delete, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.menu_item_delete) {
+            deleteToDo()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteToDo(){
+        val adBuilder = AlertDialog.Builder(requireContext())
+        adBuilder.setPositiveButton("Yes"){ _, _ ->
+            vmToDo.deleteToDo(args.curToDo)
+            Toast.makeText(requireContext(), "Successfully deleted!", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_frgEdit_to_frgList)
+        }
+        adBuilder.setNegativeButton("No"){ _, _ ->
+
+        }
+        adBuilder.setTitle("Confirm to delete the following ToDo?")
+        adBuilder.setMessage("${args.curToDo.strToDo}")
+        adBuilder.show()
     }
 }

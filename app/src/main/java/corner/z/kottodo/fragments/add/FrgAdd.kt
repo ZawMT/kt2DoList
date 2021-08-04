@@ -36,7 +36,7 @@ class FrgAdd : Fragment() {
     private fun insertToDo() {
         val strToDo = etToDo.text.toString()
         if(!TextUtils.isEmpty(strToDo)){
-            val tmpToDo = ToDo(0, false, strToDo)
+            val tmpToDo = ToDo(0, strToDo,false)
             vmToDo.addToDo(tmpToDo)
             Toast.makeText(requireContext(), "The new TODO added", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_frgAdd_to_frgList)

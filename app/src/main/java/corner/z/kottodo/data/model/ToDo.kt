@@ -7,9 +7,10 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @Entity(tableName = "TToDo")
-data class ToDo(
+data class ToDo (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
+    val strToDo: String,
     var bDone: Boolean = false,
-    val strToDo: String
+    var bToDelete: Boolean = false
 ): Parcelable

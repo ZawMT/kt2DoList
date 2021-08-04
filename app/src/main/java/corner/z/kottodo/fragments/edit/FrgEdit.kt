@@ -21,6 +21,10 @@ class FrgEdit : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        if(args.curToDo.bToDelete) {
+            deleteToDo(true)
+        }
+
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_frg_edit, container, false)
         view.etToDo.setText(args.curToDo.strToDo)
@@ -39,7 +43,7 @@ class FrgEdit : Fragment() {
         val tmpStrToDo = etToDo.text.toString()
 
         if(tmpStrToDo.isNotEmpty()) {
-            val tmpToDoUpdated = ToDo(args.curToDo.id, args.curToDo.bDone, tmpStrToDo)
+            val tmpToDoUpdated = ToDo(args.curToDo.id, tmpStrToDo, args.curToDo.bDone)
             vmToDo.updateToDo(tmpToDoUpdated)
             Toast.makeText(requireContext(),"Successfully updated!", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_frgEdit_to_frgList)
@@ -54,13 +58,13 @@ class FrgEdit : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menu_item_delete) {
-            deleteToDo()
+            deleteToDo(false)
         }
 
         return super.onOptionsItemSelected(item)
     }
 
-    private fun deleteToDo(){
+    private fun deleteToDo(bReturnToList: Boolean){
         val adBuilder = AlertDialog.Builder(requireContext())
         adBuilder.setPositiveButton("Yes"){ _, _ ->
             vmToDo.deleteToDo(args.curToDo)
@@ -68,7 +72,9 @@ class FrgEdit : Fragment() {
             findNavController().navigate(R.id.action_frgEdit_to_frgList)
         }
         adBuilder.setNegativeButton("No"){ _, _ ->
-
+            if(bReturnToList) {
+                findNavController().navigate(R.id.action_frgEdit_to_frgList)
+            }
         }
         adBuilder.setTitle("Confirm to delete the following ToDo?")
         adBuilder.setMessage("${args.curToDo.strToDo}")

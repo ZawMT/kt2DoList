@@ -1,11 +1,13 @@
 package corner.z.kottodo.fragments.list
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import corner.z.kottodo.R
 import corner.z.kottodo.data.model.ToDo
@@ -33,10 +35,9 @@ class AdptrRvToDo: RecyclerView.Adapter<AdptrRvToDo.VhLstToDo>() {
         }
 
         holder.itemView.row_todo_layout.btnDel.setOnClickListener {
-            Toast.makeText(it.context, "DELETED ${tmpCur.strToDo}", Toast.LENGTH_LONG).show()
-
-            //TODO - How to implement the deletion from here
-            //How to call the delete function of ViewModel
+            tmpCur.bToDelete = true
+            val tmpAction = FrgListDirections.actionFrgListToFrgEdit(tmpCur)
+            holder.itemView.findNavController().navigate(tmpAction)
         }
     }
 
